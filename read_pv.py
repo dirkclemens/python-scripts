@@ -65,7 +65,7 @@ def readPV():
 	print(("daily: ", data[2] ))
 	# status auslesen
 	status = [v.text.strip() for v in root.xpath("//td[@colspan='4']")]
-	print(("status: ", status))
+	print(("status: ", status[0]))
 	return data
 
 
