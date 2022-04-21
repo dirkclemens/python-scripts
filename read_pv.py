@@ -3,6 +3,8 @@
 #
 ########################################################################
 #
+#	Version 2.1		neu: mit status abfrage
+#
 # sudo pip install lxml
 # or
 # python3 -m pip install lxml --user
@@ -61,6 +63,9 @@ def readPV():
 		print(("power: ", data[9] ))
 	print(("total: ", data[1] ))
 	print(("daily: ", data[2] ))
+	# status auslesen
+	status = [v.text.strip() for v in root.xpath("//td[@colspan='4']")]
+	print(("status: ", status))
 	return data
 
 
